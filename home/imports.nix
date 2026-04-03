@@ -15,4 +15,3 @@
     ./ui/themes.nix
   ];
 }
-

@@ -1,11 +1,9 @@
-{ 
-  pkgs, 
-  ... 
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     discord
+    vesktop
     firefox
-    vscode
+    vscodium
     vlc
     lutris
     steam

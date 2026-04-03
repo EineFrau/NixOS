@@ -26,6 +26,9 @@
     nvf,
     ...
   }: let
+    overlays = [
+      (import ./overlays/vesktopOverlay.nix)
+    ];
     cfg = import ./config.nix;
     system = "x86_64-linux";
 
@@ -45,7 +48,12 @@
     };
 
     homeConfigurations.${cfg.user} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = overlays;
+      };
+      #pkgs = nixpkgs.legacyPackages.${system};
+      # overlays = overlays;
       modules = [
         ./home/home.nix
         nvf.homeManagerModules.default
