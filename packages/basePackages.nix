@@ -1,4 +1,5 @@
-{ config,
+{
+  config,
   lib,
   pkgs,
   ...
@@ -13,3 +14,4 @@
     xwayland-satellite
   ];
 }
+

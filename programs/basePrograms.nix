@@ -1,4 +1,5 @@
-{ config,
+{
+  config,
   lib,
   pkgs,
   ...
@@ -26,62 +27,51 @@ in {
         sidebar
       ];
       extraConfig = ''
-        # Префикс для команд tmux - Ctrl+a (как в screen, удобнее чем Ctrl+b)
         set -g prefix C-a
         unbind C-b
         bind C-a send-prefix
 
-        # Разделение окон: | - вертикально, - - горизонтально
         bind | split-window -h
         bind - split-window -v
 
-        # Навигация по панелям: h j k l (как в vim)
         bind h select-pane -L
         bind j select-pane -D
         bind k select-pane -U
         bind l select-pane -R
 
-        # Изменение размера панелей: Shift + h j k l
         bind H resize-pane -L 5
         bind J resize-pane -D 5
         bind K resize-pane -U 5
         bind L resize-pane -R 5
 
-        # Создание нового окна: c
-        # Переключение окон: n p (следующее/предыдущее) или 0-9
-
-        # Статус-бар: чёрный фон, белый текст
         set -g status-bg black
         set -g status-fg white
         set -g status-left '#[fg=green]#S '  # Имя сессии слева
         set -g status-right '#[fg=yellow]#(date +"%H:%M %d-%b-%y") '  # Время справа
 
-        # Включить мышь для удобства (выделение, прокрутка)
         set -g mouse on
 
-        # Нумерация окон и панелей с 1 (удобнее)
         set -g base-index 1
         set -g pane-base-index 1
 
-        # Автоматическое переименование окон
         set -g automatic-rename on
 
-        # История команд: увеличить до 10000 строк
         set -g history-limit 10000
 
-        # Режим копирования: v - начать выделение, y - скопировать (tmux-yank)
-        # В режиме копирования: h j k l для навигации
+        # Kopiermodus: v – Auswahl starten, y – Kopieren (tmux-yank)
+        # Im Kopiermodus: h j k l zur Navigation
 
-        # Плагины:
-        # tmux-resurrect: Ctrl+s - сохранить сессию, Ctrl+r - восстановить
-        # tmux-continuum: авто-сохранение каждые 15 мин
-        # tmux-yank: y в режиме копирования копирует в системный буфер
-        # tmux-prefix-highlight: показывает префикс в статус-баре
-        # tmux-sensible: разумные дефолты
-        # tmux-pain-control: дополнительные горячие клавиши
-        # tmux-fzf: Ctrl+f - поиск окон/панелей
-        # tmux-sidebar: Ctrl+b Tab - открыть боковую панель с файлами
+        # Plugins:
+        # tmux-resurrect: Strg+s – Sitzung speichern, Strg+r – wiederherstellen
+        # tmux-continuum: Alle 15 Minuten automatisch speichern
+        # tmux-yank: y kopiert im Kopiermodus in den Systempuffer
+        # tmux-prefix-highlight: Zeigt das Präfix in der Statusleiste an
+        # tmux-sensible: sinnvolle Standardeinstellungen
+        # tmux-pain-control: zusätzliche Hotkeys
+        # tmux-fzf: Strg+f – nach Fenstern/Panels suchen
+        # tmux-sidebar: Strg+b Tab – Seitenleiste mit Dateien öffnen
       '';
     };
   };
 }
+
