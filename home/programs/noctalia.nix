@@ -35,94 +35,9 @@ in {
         autoShowDelay = 150;
         showOnWorkspaceSwitch = true;
         widgets = {
-          left = [
-            {
-              defaultSettings = {
-                activeColor = "primary";
-                enableToast = true;
-                hideInactive = false;
-                iconSpacing = 4;
-                inactiveColor = "none";
-                removeMargine = false;
-              };
-              id = "plugin:privacy-indicator";
-            }
-            {
-              clockColor = "none";
-              formatHorisontal = "h:mm AP ddd MMM d";
-              formatVertical = "h:mm AP - dd MM";
-              id = "Clock";
-            }
-            {
-              id = "SystemMonitor";
-            }
-            {
-              id = "ActiveWindow";
-            }
-            {
-              id = "MediaMini";
-            }
-          ];
-          center = [
-            {
-              characterCount = 2;
-              colorizeIcons = false;
-              emptyColor = "secondary";
-              enableScrollWheel = true;
-              focusedColor = "primary";
-              followFocusedScreen = false;
-              fontWeight = "bold";
-              groupedBorderOpacity = 1;
-              hideUnoccupied = true;
-              iconScale = 0.8;
-              id = "Workspace";
-              labelMode = "none";
-              occupiedColor = "secondary";
-              pillSize = 0.6;
-              showApplications = true;
-              showApplicationsHover = true;
-              showBadge = true;
-              showLabelsOnlyWhenOccupied = true;
-              unfocusedIconsOpacity = 1;
-            }
-          ];
-          right = [
-            {
-              id = "Tray";
-            }
-            {
-              displayMode = "forceOpen";
-              iconColor = "none";
-              id = "KeyboardLayout";
-              showIcon = true;
-              textColor = "none";
-            }
-            {
-              id = "plugin:screen-recorder";
-            }
-            {
-              id = "NotificationHistory";
-            }
-            {
-              id = "Battery";
-            }
-            {
-              id = "Volume";
-            }
-            {
-              id = "Brightness";
-            }
-            {
-              id = "plugin:color-scheme-creator";
-            }
-            {
-              colorizeSystemIcon = true;
-              enableColorization = false;
-              icon = "noctalia";
-              id = "ControlCenter";
-              useDistroLogo = true;
-            }
-          ];
+          left = cfg.noctalia.bar.left;
+          center = cfg.noctalia.bar.center;
+          right = cfg.noctalia.bar.right;
         };
         mouseWheelAction = "none";
         reverseScroll = false;
@@ -419,12 +334,7 @@ in {
         size = 1;
         onlySameOutput = true;
         monitors = [];
-        pinnedApps = [
-          "firefox"
-          "code"
-          "kitty"
-          "org.telegram.desktop"
-        ];
+        pinnedApps = cfg.noctalia.dock-panel;
         colorizeIcons = false;
         showLauncherIcon = true;
         launcherPosition = "start";
@@ -540,7 +450,7 @@ in {
           criticalSoundFile = "";
           normalSoundFile = "";
           lowSoundFile = "";
-          excludedApps = "discord,firefox,chrome,chromium,edge";
+          excludedApps = "discord,firefox,chrome,chromium,edge,vesktop";
         };
         enableMediaToast = false;
         enableKeyboardLayoutToast = true;

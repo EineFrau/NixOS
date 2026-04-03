@@ -28,6 +28,9 @@
   }: let
     overlays = [
       (import ./overlays/vesktopOverlay.nix)
+      (import ./overlays/vscodiumOverlay.nix)
+      (import ./overlays/obsidianOverlays.nix)
+      (import ./overlays/spotifyOverlay.nix)
     ];
     cfg = import ./config.nix;
     system = "x86_64-linux";
