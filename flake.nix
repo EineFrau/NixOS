@@ -42,6 +42,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = overlays;
+        config.allowUnfree = true;
       };
       modules = [
         ./configuration.nix

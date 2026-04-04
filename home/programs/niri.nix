@@ -35,7 +35,7 @@ in {
     }
 
     layer-rule {
-      match namespace="^noctalia-overview"
+      match namespace="^noctalia-overview*"
       place-within-backdrop true
     }
 

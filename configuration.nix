@@ -11,8 +11,6 @@ in {
     ./imports.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
   home-manager.users.${cfg.user} = {
     imports = [
       inputs.nvf.homeManagerModules.default

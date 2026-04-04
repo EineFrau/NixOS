@@ -31,7 +31,7 @@ in {
         unbind C-b
         bind C-a send-prefix
 
-        bind | split-window -h
+        bind ß split-window -h
         bind - split-window -v
 
         bind h select-pane -L
@@ -46,8 +46,8 @@ in {
 
         set -g status-bg black
         set -g status-fg white
-        set -g status-left '#[fg=green]#S '  # Имя сессии слева
-        set -g status-right '#[fg=yellow]#(date +"%H:%M %d-%b-%y") '  # Время справа
+        set -g status-left '#[fg=green]#S '
+        set -g status-right '#[fg=yellow]#(date +"%H:%M %d-%b-%y") '
 
         set -g mouse on
 

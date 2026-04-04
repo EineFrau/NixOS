@@ -39,7 +39,7 @@
         }
         {
           clockColor = "none";
-          formatHorisontal = "h:mm AP ddd MMM d";
+          formatHorizontal = "h:mm AP ddd MMM d";
           formatVertical = "h:mm AP - dd MM";
           id = "Clock";
         }
