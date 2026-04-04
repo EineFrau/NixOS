@@ -13,7 +13,7 @@ in {
     };
 
     plymouth = {
-      enable = cfg.plymouthTheme != null && cfg.plymouthTheme == "" && cfg.plymouthTheme != false;
+      enable = if cfg.plymouthTheme != null && cfg.plymouthTheme == "" && cfg.plymouthTheme != false then true else false;
       theme =
         if cfg.plymouthTheme != null && cfg.plymouthTheme == ""
         then cfg.plymouthTheme
