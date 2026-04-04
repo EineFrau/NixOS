@@ -54,7 +54,7 @@
 
   home.sessionVariables = {
     QT_STYLE_OVERRIDE = "adwaita";
-    QT_QPA_PLATFORMTHEME = lib.mkForce "gtk";
+    QT_QPA_PLATFORMTHEME = lib.mkForce "gtk3";
     GTK_THEME = "Dracula";
   };
 }
