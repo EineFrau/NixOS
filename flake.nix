@@ -39,7 +39,10 @@
     nvfPkgs = nvf.inputs.nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations.${cfg.hostname} = nixpkgs.lib.nixosSystem {
-      inherit system;
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = overlays;
+      };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager

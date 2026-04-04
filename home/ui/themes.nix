@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   home.pointerCursor = {
@@ -19,14 +20,22 @@
 
   gtk = {
     enable = true;
-    gtk4.theme = {
-      name = "dracula";
+
+    theme = {
+      name = "Dracula";
       package = pkgs.dracula-theme;
     };
+
+    gtk4.theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+
     iconTheme = {
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
     };
+
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       size = 24;
@@ -36,10 +45,16 @@
   qt = {
     enable = true;
     platformTheme.name = "gtk";
+
     style = {
-      name = "adwaita-dark";
+      name = "adwaita";
       package = pkgs.adwaita-qt;
     };
   };
-}
 
+  home.sessionVariables = {
+    QT_STYLE_OVERRIDE = "adwaita";
+    QT_QPA_PLATFORMTHEME = lib.mkForce "gtk";
+    GTK_THEME = "Dracula";
+  };
+}
