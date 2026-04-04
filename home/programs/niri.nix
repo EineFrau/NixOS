@@ -49,6 +49,10 @@ in {
     layout {
       gaps 16
 
+      default-column-width {
+        proportion 0.67;
+      }
+
       center-focused-column "always"
 
         preset-column-widths {

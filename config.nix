@@ -17,10 +17,11 @@
     dock-panel = [
       "firefox"
       "codium"
+      "obsidian"
       "kitty"
       "spotify"
-      "org.telegram.desktop"
       "krita"
+      "org.telegram.desktop"
     ];
 
     bar = {
