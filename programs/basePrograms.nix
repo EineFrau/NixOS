@@ -22,7 +22,7 @@ in {
         obs-studio-plugins.wlrobs
         obs-studio-plugins.obs-vkcapture
         obs-studio-plugins.obs-browser-transition
-        obs-studio-plugins.obs-browser-transition
+        obs-studio-plugins.obs-pipewire-audio-capture
       ];
     };
 
