@@ -7,13 +7,25 @@
   cfg = import ../config.nix;
 in {
   programs = {
-    command-not-found.enable = true;
+    command-not-found.enable = false;
     dconf.enable = true;
     fish.enable = true;
     firefox.enable = true;
     niri.enable = true;
     steam.enable = true;
     xwayland.enable = true;
+
+    obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+      plugins = with pkgs; [
+        obs-studio-plugins.wlrobs
+        obs-studio-plugins.obs-vkcapture
+        obs-studio-plugins.obs-browser-transition
+        obs-studio-plugins.obs-browser-transition
+      ];
+    };
+
     tmux = {
       enable = true;
       plugins = with pkgs.tmuxPlugins; [

@@ -120,9 +120,11 @@
   fetchLogo = "special"; # none, small, full oder special
 
   # Weitere Themen finden Sie unter dem https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/system/boot/plymouth.nix
-  plymouthTheme = "matrix"; # Du kannst null oder "" verlassen
-  plymouthPackage = "plymouth-matrix-theme";
-
+  plymouth = {
+    enable = true;
+    theme = "matrix"; # Du kannst null oder "" verlassen
+    package = "plymouth-matrix-theme";
+  };
   # CPU
   cpuVendor = "amd"; # "intel" oder "amd"
 

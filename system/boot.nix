@@ -13,14 +13,16 @@ in {
     };
 
     plymouth = {
-      enable = if cfg.plymouthTheme != null && cfg.plymouthTheme == "" && cfg.plymouthTheme != false then true else false;
+      enable = cfg.plymouth.enable;
+
       theme =
-        if cfg.plymouthTheme != null && cfg.plymouthTheme == ""
-        then cfg.plymouthTheme
-        else null;
+        if cfg.plymouth.theme != null && cfg.plymouth.theme != ""
+        then cfg.plymouth.theme
+        else "bgrt";
+
       themePackages =
-        if cfg.plymouthPackage != null && cfg.plymouthPackage != ""
-        then [pkgs.${cfg.plymouthPackage}]
+        if cfg.plymouth.package != null && cfg.plymouth.package != ""
+        then [(lib.getAttr cfg.plymouth.package pkgs)]
         else [];
     };
   };
