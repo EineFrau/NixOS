@@ -3,8 +3,8 @@ self: super: {
     postFixup =
       (old.postFixup or "")
       + ''
-        if [ -x "$out/bin/vscodium" ]; then
-            wrapProgram $out/bin/vscodium \
+        if [ -x "$out/bin/codium" ]; then
+            wrapProgram $out/bin/codium \
               --add-flags "--ozone-platform=x11"
           fi
       '';
