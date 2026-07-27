@@ -2,7 +2,7 @@
   hostname = "nixos";
   user = "s1ndl3s";
   home-directory = "/home/s1ndl3s";
-  timeZone = "Europe/Bratislava";
+  timeZone = "Europe/Berlin";
   stateVersion = "25.05";
   stateHomeVersion = "26.05";
   display = "eDP-1";
